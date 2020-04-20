@@ -1,0 +1,23 @@
+{
+  "name": "ark-express-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/index.js",
+  "scripts": {
+    "start": "ark-express-scripts start",
+    "run": "nodemon ./dist/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@skyslit/ark-express": "./../ark-express",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.9"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ark-express-scripts": "./../ark-express-scripts",
+    "nodemon": "^2.0.2"
+  }
+}
