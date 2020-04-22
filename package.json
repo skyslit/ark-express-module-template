@@ -5,19 +5,30 @@
   "main": "./build/index.js",
   "scripts": {
     "start": "ark-express-scripts start",
+    "pt": "prettier --write .",
     "build": "ark-express-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@skyslit/ark-express": "./../ark-express",
+    "@skyslit/ark-express": "1.0.0",
     "express": "^4.17.1",
-    "mongoose": "^5.9.9"
+    "mongoose": "^5.9.9",
+    "@types/mongoose": "^5.7.10",
+    "@types/express": "^4.17.4"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@skyslit/ark-express-scripts": "./../ark-express-scripts",
-    "nodemon": "^2.0.2"
+    "@skyslit/ark-express-scripts": "1.0.0",
+    "husky": "^4.2.5",
+    "nodemon": "^2.0.2",
+    "prettier": "2.0.5",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
