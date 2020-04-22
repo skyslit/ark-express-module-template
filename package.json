@@ -1,11 +1,11 @@
 {
-  "name": "ark-express-template",
+  "name": "ark-express-module-template",
   "version": "1.0.0",
   "description": "",
   "main": "./build/index.js",
   "scripts": {
     "start": "ark-express-scripts start",
-    "run": "nodemon ./dist/bundle.js",
+    "build": "ark-express-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -17,7 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ark-express-scripts": "./../ark-express-scripts",
+    "@skyslit/ark-express-scripts": "./../ark-express-scripts",
     "nodemon": "^2.0.2"
   }
 }
