@@ -4,13 +4,13 @@
   "description": "",
   "main": "./build/index.js",
   "scripts": {
-    "start": "ark-express-scripts start",
+    "start": "ark-express-scripts start --test",
     "pt": "prettier --write .",
     "build": "ark-express-scripts build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ark-express-scripts build --test && mocha"
   },
   "dependencies": {
-    "@skyslit/ark-express": "1.0.0",
+    "@skyslit/ark-express": "1.0.1",
     "express": "^4.17.1",
     "mongoose": "^5.9.9",
     "@types/mongoose": "^5.7.10",
@@ -20,11 +20,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@skyslit/ark-express-scripts": "1.0.0",
+    "@skyslit/ark-express-scripts": "1.0.1",
     "husky": "^4.2.5",
+    "mocha": "^7.1.1",
     "nodemon": "^2.0.2",
     "prettier": "2.0.5",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^2.0.1",
+    "supertest": "^4.0.2"
   },
   "husky": {
     "hooks": {
