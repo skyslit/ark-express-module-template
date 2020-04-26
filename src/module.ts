@@ -1,28 +1,34 @@
 import { ArkExpressModule } from "@skyslit/ark-express";
-import UserSchema from "./schema/User.schema";
+import TodoSchema from "./schema/Todo.schema";
+import handlers from "./handlers";
 
 export class AuthExpressModule extends ArkExpressModule {
   constructor() {
     super();
+    this.registerModel("todo", TodoSchema);
+  }
 
-    this.registerModel("user", UserSchema);
-
-    this.router.get("/", (req, res) => {
-      this.getModel("user")
-        .find({})
-        .exec((err, result) => {
-          res.json(result);
-        });
-    });
-
-    this.router.post("/", (req, res) => {
-      const user = new (this.getModel("user"))({
-        firstName: "Dameem",
-      });
-
-      user.save((err, product) => {
-        res.json(product);
-      });
-    });
+  main() {
+    /**
+     * @api {post} /todo Create Todo Item
+     * @apiName PostTodo
+     * @apiGroup Todo
+     *
+     * @apiParam (Request Body) {String} title Title of Todo Item.
+     *
+     * @apiExample Example usage:
+     *     body:
+     *     {
+     *       "title": "Pickup Groceries"
+     *     }
+     */
+    this.router.post("/todo", handlers(this).addTodo);
+    /**
+     * @api {get} /todo See all Todo Items
+     * @apiName GetAllTodo
+     * @apiGroup Todo
+     *
+     */
+    this.router.get("/todo", handlers(this).getTodo);
   }
 }

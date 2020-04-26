@@ -13,7 +13,10 @@ describe("loading express", function () {
   });
 
   it("responds to /", function testSlash(done) {
-    request(server.httpServer).get("/").expect(200, done);
+    request(server.httpServer)
+      .post("/auth/register")
+      .send({ email: "dz@skyslit.com", password: "hola1333" })
+      .expect(422, done);
   });
 
   after(function (done) {
