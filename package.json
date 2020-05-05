@@ -11,7 +11,7 @@
     "test": "ark-express-scripts build --test && mocha"
   },
   "dependencies": {
-    "@skyslit/ark-express": "./../ark-express",
+    "@skyslit/ark-express": "^1.0.2",
     "@types/express": "^4.17.4",
     "@types/mongoose": "^5.7.10",
     "apidoc": "^0.20.1",
